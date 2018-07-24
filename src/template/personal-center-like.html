@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人中心-收藏模板</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .main {
+            background: #eee;
+        }
+        .main .main-content {
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .main .aside {
+            width: 300px;
+            float: left;
+        }
+        .main .aside .person-info {
+            background: #fff;
+        }
+        .main .aside .person-info .account {
+            padding-top: 28px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+        .main .aside .person-info .avatar {
+            display: block;
+            margin: 0 auto 47px;
+            margin-top: 23px;
+            width: 134px;
+            height: 134px;
+        }
+        .main .aside .person-info .avatar img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background: #000;
+        }
+        .main .aside .person-info .balance {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-top: 1px solid #CCCCCC;
+            font-size: 16px;
+            color: #666;
+        }
+        .main .aside .person-info .balance em {
+            color: #3497DB;
+        }
+        .main .aside .nav {
+            min-height: 700px;
+            margin-top: 35px;
+            background: #fff;
+        }
+        .main .aside .nav .nav-item {
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .main .aside .nav .nav-item .iconfont {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .main .aside .nav .nav-item a {
+            display: block;
+            font-size: 18px;
+            color: #7B7E82;
+        }
+        .main .aside .nav .nav-item.active .text {
+            color: #3497DB;
+        }
+        .main .content {
+            float: left;
+            margin-left: 20px;
+            width: 880px;
+            box-sizing: border-box;
+            background: #fff;
+        }
+        .main .content .title {
+            padding-left: 56px;
+            height: 76px;
+            line-height: 76px;
+            border-bottom: 1px solid #ccc;
+            font-size: 24px;
+            color: #888;
+        }
+        .main .content .temp-content {
+            padding: 80px 10px 0 10px;
+        }
+        .main .content .temp-item {
+            position: relative;
+            float: left;
+            margin-right: 60px;
+            margin-bottom: 60px;
+            width: 242px;
+            height: 262px;
+        }
+        .main .content .temp-item:nth-child(3n) {
+            margin-right: 0;
+        }        
+        .main .content .temp-item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: #ccc;
+        }
+        .main .content .temp-item:hover .mask {
+            display: block;
+        }
+        .main .content .temp-item .mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        .main .content .temp-item .mask button {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -50px;
+            margin-top: -19px;
+            width: 100px;
+            height: 38px;
+            border-radius: 19px;
+            background: #3497DB;
+            border: none;
+            outline: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content clearfix">
+            <div class="logo-wrap">
+                <img src="../image/logo.png" alt="">
+            </div>
+            <nav class="topbar-nav clearfix">
+                <div class="nav-item">
+                    <a href="">首页</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">客户案例</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">使用手册</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">定制开发</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">关于我们</a>
+                </div>
+            </nav>
+            <div class="topbar-right clearfix">
+                <div class="regist"><a href="">免费注册</a></div>
+                <div class="login"><a href="">登录</a></div>
+                <div class="personal-center">
+                    <a href="">
+                        <i class="iconfont icon-setting"></i>
+                        <span class="text">个人中心</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="main-content clearfix">
+            <aside class="aside">
+                <div class="person-info">
+                    <div class="account">账号：偶一</div>
+                    <div class="avatar">
+                        <img src="" alt="">
+                        <span class="icon-edit"></span>
+                    </div>
+                    <div class="balance">余额<em>0.00</em>元</div>
+                </div>
+                <div class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="">
+                                <span class="iconfont icon-order"></span>
+                                <span class="text">我的订单</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="">
+                                <span class="iconfont icon-star"></span>
+                                <span class="text">收藏模板</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="">
+                                <span class="iconfont icon-chong"></span>
+                                <span class="text">财务充值</span>
+                            </a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="">
+                                <span class="iconfont icon-record"></span>
+                                <span class="text">消费记录</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="">
+                                <span class="iconfont icon-me"></span>
+                                <span class="text">个人中心</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="content">
+                <h2 class="title">收藏模板</h2>
+                <div class="temp-content">
+                    <ul class="temp-list clearfix">
+                        <li class="temp-item">
+                            <a href="">
+                                <img src="" alt="">
+                                <div class="mask">
+                                    <button>预览</button>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="temp-item">
+                            <a href="">
+                                <img src="" alt="">
+                                <div class="mask">
+                                    <button>预览</button>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="temp-item">
+                            <a href="">
+                                <img src="" alt="">
+                                <div class="mask">
+                                    <button>预览</button>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="temp-item">
+                            <a href="">
+                                <img src="" alt="">
+                                <div class="mask">
+                                    <button>预览</button>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="temp-item">
+                            <a href="">
+                                <img src="" alt="">
+                                <div class="mask">
+                                    <button>预览</button>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="temp-item">
+                            <a href="">
+                                <img src="" alt="">
+                                <div class="mask">
+                                    <button>预览</button>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content clearfix">
+            <div class="nav clearfix">
+                <dl>
+                    <dt>公司产品</dt>
+                    <dd><a href="">APP开发</a></dd>
+                    <dd><a href="">网站开发</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">公司简介</a></dd>
+                    <dd><a href="">新闻资讯</a></dd>
+                    <dd><a href="">人才招聘</a></dd>
+                </dl>
+                <dl>
+                    <dt>客户服务</dt>
+                    <dd><a href="">支付方式</a></dd>
+                    <dd><a href="">在线沟通</a></dd>
+                </dl>
+            </div>
+            <div class="contact">
+                <div class="phone">800-000-0000</div>
+                <div class="time">周一至周五 09:00 - 18:00</div>
+                <ul class="contact-way-list clearfix">
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="copyright-content clearfix">
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
+                <p class="copyright">2009-2016 © 广州聚慧网络科技有限公司 版权所有 粤ICP备******号-*  网站地图</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.3.3.1.js"></script>
+    <script>
+        $('.tab-btn').on('click', function(e) {
+            if ($(this).hasClass('active')) {
+                return
+            }
+            var index = $(this).index()
+            $('.tab-btn.active').removeClass('active')
+            $(this).addClass('active')
+            $('.tab-content.active').removeClass('active')
+            $('.tab-content').eq(index).addClass('active')
+        })
+    </script>
+</body>
+</html>

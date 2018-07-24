@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>客户案例</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .main {
+            background: #eee;
+        }
+        .main .main-content {
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .main .aside {
+            width: 300px;
+            float: left;
+        }
+        .main .aside .person-info {
+            background: #fff;
+        }
+        .main .aside .person-info .account {
+            padding-top: 28px;
+            text-align: center;
+            font-size: 16px;
+            color: #333;
+        }
+        .main .aside .person-info .avatar {
+            display: block;
+            margin: 0 auto 47px;
+            margin-top: 23px;
+            width: 134px;
+            height: 134px;
+        }
+        .main .aside .person-info .avatar img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background: #000;
+        }
+        .main .aside .person-info .balance {
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border-top: 1px solid #CCCCCC;
+            font-size: 16px;
+            color: #666;
+        }
+        .main .aside .person-info .balance em {
+            color: #3497DB;
+        }
+        .main .aside .nav {
+            min-height: 700px;
+            margin-top: 35px;
+            background: #fff;
+        }
+        .main .aside .nav .nav-item {
+            height: 60px;
+            line-height: 60px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .main .aside .nav .nav-item .iconfont {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        .main .aside .nav .nav-item a {
+            display: block;
+            font-size: 18px;
+            color: #7B7E82;
+        }
+        .main .aside .nav .nav-item.active .text {
+            color: #3497DB;
+        }
+        .main .content {
+            float: left;
+            margin-left: 20px;
+            width: 880px;
+            box-sizing: border-box;
+        }
+        .main .tab-btn-list {
+            padding: 0 48px;
+            height: 76px;
+            background: #fff;
+        }
+        .main .tab-btn {
+            float: left;
+            font-size: 24px;
+            color: #333333;
+        }
+        .main .tab-btn {
+            margin-top: 16px;
+            margin-right: 60px;
+            width: 114px;
+            height: 44px;
+            text-align: center;
+            line-height: 44px;
+            border-radius: 22px;
+            font-size: 24px;
+            color: #333;
+            cursor: pointer;
+        }
+        .main .tab-btn.active {
+            background: #01ACFC;
+            color: #fff;
+        }
+        .main .app-list .app-item,
+        .main .order-list .order-item {
+            position: relative;
+            margin-top: 20px;
+            background: #fff;
+        }
+        .main .tab-content {
+            display: none;
+        }
+        .main .tab-content.active {
+            display: block;
+        }
+        .main .order-list .order-item .head {
+            padding: 0 30px;
+            height: 32px;
+            line-height: 32px;
+            border-bottom: 1px solid #ccc;
+            font-size: 12px;
+            color: #666;
+        }
+        .main .order-list .order-item .ordersn {
+            float: left;
+        }
+        .main .order-list .order-item .status {
+            float: right;
+        }
+        .main .app-list .app-item,
+        .main .order-list .order-item .order-content {
+            padding: 20px 10px 30px 30px;
+        }
+        .main .app-list .app-item .thumb,
+        .main .order-list .order-item .order-content .thumb {
+            float: left;
+            width: 87px;
+            height: 87px;
+            border-radius: 10px;
+            background: #f00;
+        }
+        .main .app-list .app-item .app-content,
+        .main .order-list .order-item .order-info {
+            float: left;
+            position: initial;
+            margin-left: 12px;
+            width: 741px;
+        }
+        .main .app-list .app-item .app-content .name,
+        .main .order-list .order-item .order-info .name {
+            font-size: 14px;
+            color: #888;
+        }
+        .main .app-list .app-item .app-content .name em,
+        .main .order-list .order-item .order-info .name em {
+            font-size: 18px;
+            color: #333;
+        }
+        .main .app-list .app-item .operate-btn-list,
+        .main .order-list .order-item .operate-btn-list {
+            float: right;
+            margin-right: 100px;
+        }
+        .main .app-list .app-item .operate-btn,        
+        .main .order-list .order-item .operate-btn {
+            float: left;
+            margin-left: 40px;
+            width: 88px;
+            height: 40px;
+        }
+        .main .app-list .app-item .operate-btn a,
+        .main .order-list .order-item .operate-btn a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            line-height: 40px;
+            text-align: center;
+            border: 1px solid #888;
+            background: #f1f0f0;
+            font-size: 18px;
+            color: #666;
+            box-sizing: border-box;
+        }
+        .main .order-list .order-item .order-info .price {
+            position: absolute;
+            right: 10px;
+            bottom: 16px;
+            font-size: 18px;
+            color: #888;
+        }
+        .main .order-list .order-item .order-info .price em {
+            font-size: 20px;
+            color: #01acfc;
+        }
+        .main .app-list .app-item .name button {
+            padding: 0 6px;
+            margin-left: 12px;
+            height: 20px;
+            border: none;
+            border-radius: 10px;
+            background: #01ACFC;
+            font-size: 12px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .main .app-list .app-item .device-list {
+            margin-top: 20px;
+        }
+        .main .app-list .app-item .device-list .device-item {
+            float: left;
+            margin-right: 10px;
+        }
+        .main .app-list .app-item .device-list .device-item .icon {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #F0F0F0;
+            background-image: url(../image/device-list.png);
+        }
+        .main .app-list .app-item .device-list .device-item .icon-android {
+            background-position: -110px -8px;
+        }
+        .main .app-list .app-item .device-list .device-item .icon-android.active {
+            background-position: -215px -8px;
+        }
+        .main .app-list .app-item .device-list .device-item .icon-apple {
+            background-position: -6px -8px;
+        }
+        .main .app-list .app-item .device-list .device-item .icon-apple.active {
+            background-position: -57px -8px;
+        }
+        .main .app-list .app-item .device-list .device-item .icon-mobile {
+            background-position: -160px -8px;
+        }
+        .main .app-list .app-item .device-list .device-item .icon-mobile.active {
+            background-position: -266px -8px;
+        }
+        .main .app-list .app-item .device-list .device-item .icon-pc {
+            background-position: -322px -2px;
+        }
+        .main .app-list .app-item .device-list .device-item .icon-pc.active {
+            background-position: -376px -2px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content clearfix">
+            <div class="logo-wrap">
+                <img src="../image/logo.png" alt="">
+            </div>
+            <nav class="topbar-nav clearfix">
+                <div class="nav-item">
+                    <a href="">首页</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">客户案例</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">使用手册</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">定制开发</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">关于我们</a>
+                </div>
+            </nav>
+            <div class="topbar-right clearfix">
+                <div class="regist"><a href="">免费注册</a></div>
+                <div class="login"><a href="">登录</a></div>
+                <div class="personal-center">
+                    <a href="">
+                        <i class="iconfont icon-setting"></i>
+                        <span class="text">个人中心</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="main-content clearfix">
+            <aside class="aside">
+                <div class="person-info">
+                    <div class="account">账号：偶一</div>
+                    <div class="avatar">
+                        <img src="" alt="">
+                        <span class="icon-edit"></span>
+                    </div>
+                    <div class="balance">余额<em>0.00</em>元</div>
+                </div>
+                <div class="nav">
+                    <ul class="nav-list">
+                        <li class="nav-item active">
+                            <a href="">
+                                <span class="iconfont icon-order"></span>
+                                <span class="text">我的订单</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="">
+                                <span class="iconfont icon-star"></span>
+                                <span class="text">收藏模板</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="">
+                                <span class="iconfont icon-chong"></span>
+                                <span class="text">财务充值</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="">
+                                <span class="iconfont icon-record"></span>
+                                <span class="text">消费记录</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="">
+                                <span class="iconfont icon-me"></span>
+                                <span class="text">个人中心</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <div class="content">
+                <div class="tab-btn-list clearfix">
+                    <div class="tab-btn active">我的订单</div>
+                    <div class="tab-btn">我的应用</div>
+                </div>
+                <div class="tab-content-list">
+                    <div class="tab-content active">
+                        <ul class="order-list">
+                            <li class="order-item">
+                                <div class="head clearfix">
+                                    <div class="ordersn">订单号：<em>350216288522</em></div>
+                                    <div class="status">状态：<em>已支付</em></div>
+                                </div>
+                                <div class="order-content clearfix">
+                                    <div class="thumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="order-info clearfix">
+                                        <div class="name">名称：<em>微开云</em></div>
+                                        <div class="operate-btn-list clearfix">
+                                            <div class="operate-btn"><a href="">查看进度</a></div>
+                                            <div class="operate-btn"><a href="">联系售后</a></div>
+                                            <div class="operate-btn"><a href="">删除</a></div>
+                                        </div>
+                                        <div class="price"><em>8888.00</em>元</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="order-item">
+                                <div class="head clearfix">
+                                    <div class="ordersn">订单号：<em>350216288522</em></div>
+                                    <div class="status">状态：<em>未支付</em></div>
+                                </div>
+                                <div class="order-content clearfix">
+                                    <div class="thumb">
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="order-info clearfix">
+                                        <div class="name">名称：<em>微开云</em></div>
+                                        <div class="operate-btn-list clearfix">
+                                            <div class="operate-btn"><a href="">删除</a></div>
+                                            <div class="operate-btn"><a href="">付款</a></div>
+                                        </div>
+                                        <div class="price"><em>8888.00</em>元</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <ul class="app-list">
+                            <li class="app-item clearfix">
+                                <img src="" alt="" class="thumb">
+                                <div class="app-content">
+                                    <div class="name">名称：<em>微开云</em><button>升级</button></div>
+                                    <ul class="device-list">
+                                        <li class="device-item">
+                                            <a href=""><span class="icon icon-android"></span></a>
+                                        </li>
+                                        <li class="device-item">
+                                            <a href=""><span class="icon icon-apple"></span></a>
+                                        </li>
+                                        <li class="device-item">
+                                            <a href=""><span class="icon icon-mobile"></span></a>
+                                        </li>
+                                        <li class="device-item">
+                                            <a href=""><span class="icon icon-pc"></span></a>
+                                        </li>
+                                    </ul>
+                                    <ul class="operate-btn-list">
+                                        <li class="operate-btn"><a href="">修改</a></li>
+                                        <li class="operate-btn"><a href="">预览</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="app-item clearfix">
+                                <img src="" alt="" class="thumb">
+                                <div class="app-content">
+                                    <div class="name">名称：<em>微开云</em><button>升级</button></div>
+                                    <ul class="device-list">
+                                        <li class="device-item">
+                                            <a href=""><span class="icon icon-android active"></span></a>
+                                        </li>
+                                        <li class="device-item">
+                                            <a href=""><span class="icon icon-apple active"></span></a>
+                                        </li>
+                                        <li class="device-item">
+                                            <a href=""><span class="icon icon-mobile"></span></a>
+                                        </li>
+                                        <li class="device-item">
+                                            <a href=""><span class="icon icon-pc"></span></a>
+                                        </li>
+                                    </ul>
+                                    <ul class="operate-btn-list">
+                                        <li class="operate-btn"><a href="">修改</a></li>
+                                        <li class="operate-btn"><a href="">预览</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content clearfix">
+            <div class="nav clearfix">
+                <dl>
+                    <dt>公司产品</dt>
+                    <dd><a href="">APP开发</a></dd>
+                    <dd><a href="">网站开发</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">公司简介</a></dd>
+                    <dd><a href="">新闻资讯</a></dd>
+                    <dd><a href="">人才招聘</a></dd>
+                </dl>
+                <dl>
+                    <dt>客户服务</dt>
+                    <dd><a href="">支付方式</a></dd>
+                    <dd><a href="">在线沟通</a></dd>
+                </dl>
+            </div>
+            <div class="contact">
+                <div class="phone">800-000-0000</div>
+                <div class="time">周一至周五 09:00 - 18:00</div>
+                <ul class="contact-way-list clearfix">
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="copyright-content clearfix">
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
+                <p class="copyright">2009-2016 © 广州聚慧网络科技有限公司 版权所有 粤ICP备******号-*  网站地图</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.3.3.1.js"></script>
+    <script>
+        $('.tab-btn').on('click', function(e) {
+            if ($(this).hasClass('active')) {
+                return
+            }
+            var index = $(this).index()
+            $('.tab-btn.active').removeClass('active')
+            $(this).addClass('active')
+            $('.tab-content.active').removeClass('active')
+            $('.tab-content').eq(index).addClass('active')
+        })
+    </script>
+</body>
+</html>

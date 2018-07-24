@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>关于我们</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .banner {
+            width: 100%;
+            min-width: 1200px;
+        }
+        .banner a {
+            display: block;
+            width: 100%;
+        }
+        .banner a img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .main {
+            padding-bottom: 90px;
+            background: rgb(238, 238, 238);
+        }
+        .main .section-content {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .main .section-content .common-title {
+            padding-top: 50px;
+            text-align: center;
+        }
+        .main .section-content .common-title .title-content {
+            display: inline-block;
+        }
+        .main .section-content .common-title .title-content .title {
+            line-height: 1;
+            font-size: 36px;
+        }
+        .main .section-content .common-title .title-content .sub-title {
+            padding-top: 5px;
+            line-height: 1;
+            font-size: 14px;
+            color: #ccc;
+        }
+        .main .section-content .content article section {
+            margin-top: 60px;
+            line-height: 26px;
+            font-size: 16px;
+            color: #666;
+        }
+        .main .section.contact .content {
+            margin-top: 140px;
+            padding: 0 50px;
+        }
+        .main .section-content .content .left {
+            width: 50%;
+            height: 200px;
+            float: left;
+            padding-right: 25px;
+            border-right: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .main .section-content .left img {
+            float: left;
+            width: 40px;
+            height: 180px;
+            background: #ccc;
+        }
+        .main .section-content .left .company-info {
+            float: left;
+            margin-left: 40px;
+        }
+        .main .section-content .left .company-info .name {
+            padding-top: 25px;
+            line-height: 1;
+            font-size: 24px;
+            color: #333;
+        }
+        .main .section-content .left .company-info .location-wrap {
+            margin-top: 10px;
+        }
+        .main .section-content .left .company-info .location-wrap .icon-location {
+            display: inline-block;
+            vertical-align: top;
+            width: 15px;
+            height: 18px;
+            background: #ccc;
+        }
+        .main .section-content .left .company-info .location-wrap .location {
+            line-height: 18px;
+            font-size: 16px;
+            color: #333;
+        }
+        .main .section-content .left .company-info .contact-wrap {
+            margin-top: 36px;
+            font-size: 18px;
+            color: #888;
+        }
+        .main .section-content .left .company-info .contact-wrap .mobile-wrap {
+            float: left;
+            width: 50'
+        }
+        .main .section-content .left .company-info .contact-wrap .mobile-wrap .icon-mobile {
+            display: inline-block;
+            vertical-align: bottom;
+            margin-right: 5px;
+            width: 22px;
+            height: 34px;
+            background: #ccc;
+        }
+        .main .section-content .left .company-info .contact-wrap .email-wrap {
+            float: right;
+            margin-top: 13px;
+            width: 50%;
+            text-align: right;
+        }
+        .main .section-content .left .company-info .contact-wrap .email-wrap .icon-email {
+            display: inline-block;
+            vertical-align: bottom;
+            margin-right: 5px;
+            width: 28px;
+            height: 21px;
+            background: #ccc;
+        }
+        .main .section-content .content .right {
+            height: 200px;
+            width: 50%;
+            float: left;
+            padding-left: 146px;
+            box-sizing: border-box;
+        }
+        .main .section-content .content .right .phone .title {
+            padding-top: 20px;
+            line-height: 1;
+            font-size: 18px;
+            color: #888;
+        }
+        .main .section-content .content .right .phone .phone-num {
+            padding-top: 20px;
+            line-height: 1;
+            font-size: 46px;
+            color: #01ACFC;
+        }
+        .main .section-content .content .right .qq-list {
+            margin-top: 27px;
+        }
+        .main .section-content .content .right .qq-list .qq-item {
+            float: left;
+            font-size: 0;
+            margin-right: 60px;
+            margin-bottom: 27px;
+        }
+        .main .section-content .content .right .qq-list .qq-item .icon-qq {
+            display: inline-block;
+            vertical-align: top;
+            width: 16px;
+            height: 18px;
+            background: #ccc;
+        }
+        .main .section-content .content .right .qq-list .qq-item .qq-num {
+            padding-left: 10px;
+            line-height: 1;
+            font-size: 18px;
+            color: #888;
+        }
+        .main .section-content .map-wrap {
+            position: relative;
+            width: 1100px;
+            height: 478px;
+            margin: 80px auto 0;
+            background: #ccc;
+        }
+        .main .section-content .map-wrap .guild {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 350px;
+            height: 290px;
+            padding: 15px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        .main .section-content .map-wrap .guild .title {
+            border-left: 4px solid #ccc;
+            padding-left: 30px;
+            font-size: 24px;
+            color: #01ACFC;
+        }
+        .main .section-content .map-wrap .guild .guild-item {
+            margin-top: 25px;
+        }
+        .main .section-content .map-wrap .guild .guild-item .head {
+            font-size: 0;
+        }
+        .main .section-content .map-wrap .guild .guild-item .head .icon-bus,
+        .main .section-content .map-wrap .guild .guild-item .head .icon-subway {
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 22px;
+            background: #ccc;
+        }
+        .main .section-content .map-wrap .guild .guild-item .head .text {
+            padding-left: 10px;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 18px;
+            color: #333;
+        }
+        .main .section-content .map-wrap .guild .guild-item .guild-content {
+            margin: 15px 0 0 20px;
+            width: 238px;
+        }
+        .main .section-content .map-wrap .guild .guild-item .guild-content p {
+            line-height: 24px;
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content clearfix">
+            <div class="logo-wrap">
+                <img src="../image/logo.png" alt="">
+            </div>
+            <nav class="topbar-nav clearfix">
+                <div class="nav-item">
+                    <a href="">首页</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">客户案例</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">使用手册</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">定制开发</a>
+                </div>
+                <div class="nav-item active">
+                    <a href="">关于我们</a>
+                </div>
+            </nav>
+            <div class="topbar-right clearfix">
+                <div class="regist"><a href="">免费注册</a></div>
+                <div class="login"><a href="">登录</a></div>
+                <div class="personal-center">
+                    <a href="">
+                        <i class="iconfont icon-setting"></i>
+                        <span class="text">个人中心</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <a href="">
+            <img src="../image/banner.png" alt="">
+        </a>
+    </div>
+    <div class="main">
+        <section class="section intro">
+            <div class="section-content">
+                <div class="common-title">
+                    <div class="title-content">
+                        <h2 class="title">聚惠介绍</h2>
+                        <h3 class="sub-title">ABOUT RATUO</h3>
+                    </div>
+                </div>
+                <div class="content">
+                    <article>
+                        <section>广州聚慧网络科技有限公司（以下简称“聚慧”） ，旨在为客户提供先进的网站建设及全网营销解决方案，致力于互联网+信息化发展。镭拓秉承“创意，前沿，造就新价值”的理念，为客户提供专业网站建设、移动开发、设计服务、优化推广等全方位的互联网+众创服务；为企业、政府、事业单位、教育行业提供各种核心解决方案以及产品研发与测试、平台运行及管理咨询服务。</section>
+                        <section>解决方案包括了：企业官网、品牌官网、电子商务、移动应用、互联网金融、电子政务、电子医疗、教育信息化等；涉及的行业领域有：制造业、金融、通讯、政府、医疗、地产、物流、家电、教育、娱乐、广告、传媒等行业。</section>
+                        <section>镭拓始终坚持以客户为中心、以技术为基础、以创新为目标、以质量为生存、以诚信求发展，对待每一个产品都要求尽善尽美，不断在技术和应用领域进行创新和突破，努力将产品服务提升到国际化水平，并以拥有自己的核心技术和创新精神为自己的永远追求，扬帆起航，乘风破浪，开辟新征程。</section>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section contact">
+            <div class="section-content">
+                <div class="common-title">
+                    <div class="title-content">
+                        <h2 class="title">联系我们</h2>
+                        <h3 class="sub-title">ABOUT RATUO</h3>
+                    </div>
+                </div>
+                <div class="content clearfix">
+                    <div class="left clearfix">
+                        <img src="" alt="">
+                        <div class="company-info">
+                            <div class="name">广州聚惠网络科技有限公司</div>
+                            <div class="location-wrap">
+                                <span class="icon-location"></span>
+                                <span class="location">广东省广州市天河区珠江东路18号高德置地广场H座</span>
+                            </div>
+                            <div class="contact-wrap clearfix">
+                                <div class="mobile-wrap">
+                                    <span class="icon-mobile"></span>
+                                    <span class="mobile-nu">1325550885</span>
+                                </div>
+                                <div class="email-wrap">
+                                    <span class="icon-email"></span>
+                                    <span class="email">225864@qq.com</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="phone">
+                            <div class="title">客服热线</div>
+                            <p class="phone-num">400-6666-113</p>
+                        </div>
+                        <ul class="qq-list clearfix">
+                            <li class="qq-item">
+                                <a href="">
+                                    <span class="icon-qq"></span>
+                                    <span class="qq-num">225113566</span>
+                                </a>
+                            </li>
+                            <li class="qq-item">
+                                <a href="">
+                                    <span class="icon-qq"></span>
+                                    <span class="qq-num">225113566</span>
+                                </a>
+                            </li>
+                            <li class="qq-item">
+                                <a href="">
+                                    <span class="icon-qq"></span>
+                                    <span class="qq-num">225113566</span>
+                                </a>
+                            </li>
+                            <li class="qq-item">
+                                <a href="">
+                                    <span class="icon-qq"></span>
+                                    <span class="qq-num">225113566</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="map-wrap">
+                    <div class="map"></div>
+                    <div class="guild">
+                        <div class="title">乘车指引</div>
+                        <ul class="guild-list">
+                            <li class="guild-item">
+                                <div class="head">
+                                    <span class="icon-subway"></span>
+                                    <span class="text">乘坐地铁</span>
+                                </div>
+                                <div class="guild-content">
+                                    <p>乘坐地铁到猎德D口出直走.看到地下通道进去B口出就能看到H座.</p>
+                                </div>
+                            </li>
+                            <li class="guild-item">
+                                <div class="head">
+                                    <span class="icon-bus"></span>
+                                    <span class="text">乘坐公交</span>
+                                </div>
+                                <div class="guild-content">
+                                    <p>乘坐B22、B1、B12、B19至BRT冼村路中下车即可。</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <div class="content clearfix">
+            <div class="nav clearfix">
+                <dl>
+                    <dt>公司产品</dt>
+                    <dd><a href="">APP开发</a></dd>
+                    <dd><a href="">网站开发</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">公司简介</a></dd>
+                    <dd><a href="">新闻资讯</a></dd>
+                    <dd><a href="">人才招聘</a></dd>
+                </dl>
+                <dl>
+                    <dt>客户服务</dt>
+                    <dd><a href="">支付方式</a></dd>
+                    <dd><a href="">在线沟通</a></dd>
+                </dl>
+            </div>
+            <div class="contact">
+                <div class="phone">800-000-0000</div>
+                <div class="time">周一至周五 09:00 - 18:00</div>
+                <ul class="contact-way-list clearfix">
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="copyright-content clearfix">
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
+                <p class="copyright">2009-2016 © 广州聚慧网络科技有限公司 版权所有 粤ICP备******号-*  网站地图</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

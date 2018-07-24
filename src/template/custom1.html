@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定制开发1</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .banner {
+            position: relative;
+            width: 100%;
+            min-width: 1200px;
+        }
+        .banner a {
+            display: block;
+            width: 100%;
+        }
+        .banner a img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+        .banner .title {
+            position: absolute;
+            top: 30%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 72px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .main {
+            position: relative;
+        }
+        .main .content {
+            position: relative;
+            width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 110px;
+        }
+        .custom-demand {
+            position: absolute;
+            top: -300px;
+            left: 50%;
+            margin-left: -600px;
+            width: 1200px;
+            height: 255px;
+            padding: 66px 155px 52px 155px;
+            background: #fff;
+            border-radius: 5px;
+            border: 2px solid rgba(0,0,0,0.19);
+            box-sizing: border-box;
+        }
+        .custom-demand h2 {
+            line-height: 1;
+            text-align: center;
+            font-size: 22px;
+            color: #333;
+        }
+        .custom-demand .phone {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 0;
+        }
+        .custom-demand .phone .icon-phone {
+            display: inline-block;
+            vertical-align: top;
+            width: 17px;
+            height: 17px;
+            background: #ccc;
+        }
+        .custom-demand .phone .phone-num {
+            padding-left: 10px;
+            line-height: 17px;
+            font-size: 16px;
+            color: #333;
+        }
+        .custom-demand form {
+            margin-top: 50px;
+            font-size: 0;
+        }
+        .custom-demand form .demand {
+            padding-left: 20px;
+            margin-right: 20px;
+            width: 493px;
+            height: 40px;
+            border: 1px solid #888;
+            box-sizing: border-box;
+            background: #f5f5f5;
+            font-size: 14px;
+            color: #666;
+        }
+        .custom-demand form .budget {
+            margin-right: 20px;
+            text-align: center;
+            width: 193px;
+            height: 40px;
+            border: 1px solid #888;
+            box-sizing: border-box;
+            background: #f5f5f5;
+            font-size: 14px;
+            color: #666;
+        }
+        .custom-demand form button {
+            width: 160px;
+            height: 40px;
+            border: none;
+            outline: none;
+            background: #01ACFC;
+            font-size: 14px;
+            color: #fff;
+        }
+        .type-list {
+            padding-top: 55px;
+        }
+        .type-list .type-item {
+            position: relative;
+            margin-right: 74px;
+            float: left;
+            width: 244px;
+            height: 280px;
+            border: 2px solid rgba(0,0,0,0.19);
+            box-sizing: border-box;
+        }
+        .type-list .type-item:nth-child(4n) {
+            margin-right: 0;
+        }
+        .type-list .type-item img {
+            display: block;
+            position: absolute;
+            bottom: 125px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .type-list .type-item .name {
+            position: absolute;
+            bottom: 70px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 24px;
+            color: #000;
+        }
+        .process-list {
+            position: relative;
+            margin-top: 105px;
+            padding: 0 30px;
+            text-align: center;
+            font-size: 0;
+        }
+        .process-list::before {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            background: #01ACFC;
+            z-index: -1;
+        }
+        .process-item {
+            display: inline-block;
+            width: 88px;
+            margin-right: 40px;
+            z-index: 10;
+        }
+        .process-item:last-child {
+            margin-right: 0;
+        }
+        .process-item .img-wrap {
+            display: block;
+            margin: 0 auto;
+            width: 60px;
+            height: 60px;
+            border: 1px solid #01ACFC;
+            background-color: #fff;
+        }
+        .process-item .img-wrap img {
+            display: block;
+            margin: 20px auto 0;
+        }
+        .process-item .title {
+            padding-top: 10px;
+            line-height: 1;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content clearfix">
+            <div class="logo-wrap">
+                <img src="../image/logo.png" alt="">
+            </div>
+            <nav class="topbar-nav clearfix">
+                <div class="nav-item">
+                    <a href="">首页</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">客户案例</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">使用手册</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">定制开发</a>
+                </div>
+                <div class="nav-item active">
+                    <a href="">关于我们</a>
+                </div>
+            </nav>
+            <div class="topbar-right clearfix">
+                <div class="regist"><a href="">免费注册</a></div>
+                <div class="login"><a href="">登录</a></div>
+                <div class="personal-center">
+                    <a href="">
+                        <i class="iconfont icon-setting"></i>
+                        <span class="text">个人中心</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="banner">
+        <a href="">
+            <img src="../image/banner1.png" alt="">
+        </a>
+        <div class="title">给你最专业的定制平台</div>
+    </div>
+    
+    <div class="main">
+        <div class="content">
+            <div class="custom-demand">
+                <div class="title">
+                    <h2>提交定制需求，免费评估</h2>
+                    <div class="phone">
+                        <span class="icon-phone"></span>
+                        <span class="phone-num">800-220-2003</span>
+                    </div>
+                    <form action="">
+                        <input type="text" class="demand" placeholder="一句话描述自己的需求，例如：美食APP">
+                        <input type="text" class="budget" placeholder="项目预算">
+                        <button>免费评估APP</button>
+                    </form>
+                </div>
+            </div>
+            <ul class="type-list clearfix">
+                <li class="type-item">
+                    <a href="">
+                        <img src="../image/icon-android.png" alt="">
+                        <div class="name">Android安卓开发</div>
+                    </a>
+                </li>
+                <li class="type-item">
+                    <a href="">
+                        <img src="../image/icon-apple.png" alt="">
+                        <div class="name">IOS苹果开发</div>
+                    </a>
+                </li>
+                <li class="type-item">
+                    <a href="">
+                        <img src="../image/icon-h5.png" alt="">
+                        <div class="name">HTML5开发</div>
+                    </a>
+                </li>
+                <li class="type-item">
+                    <a href="">
+                        <img src="../image/icon-phone.png" alt="">
+                        <div class="name">小程序开发</div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="process-list clearfix">
+                <li class="process-item">
+                    <a href="">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <div class="title">需求分析</div>
+                    </a>
+                </li>
+                <li class="process-item">
+                    <a href="">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <div class="title">原型设计</div>
+                    </a>
+                </li>
+                <li class="process-item">
+                    <a href="">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <div class="title">UI设计</div>
+                    </a>
+                </li>
+                <li class="process-item">
+                    <a href="">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <div class="title">程序开发</div>
+                    </a>
+                </li>
+                <li class="process-item">
+                    <a href="">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <div class="title">产品测试</div>
+                    </a>
+                </li>
+                <li class="process-item">
+                    <a href="">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <div class="title">项目管理</div>
+                    </a>
+                </li>
+                <li class="process-item">
+                    <a href="">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <div class="title">证书申请</div>
+                    </a>
+                </li>
+                <li class="process-item">
+                    <a href="">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <div class="title">上传应用市场</div>
+                    </a>
+                </li>
+                <li class="process-item">
+                    <a href="">
+                        <div class="img-wrap">
+                            <img src="" alt="">
+                        </div>
+                        <div class="title">更新&维护</div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content clearfix">
+            <div class="nav clearfix">
+                <dl>
+                    <dt>公司产品</dt>
+                    <dd><a href="">APP开发</a></dd>
+                    <dd><a href="">网站开发</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">公司简介</a></dd>
+                    <dd><a href="">新闻资讯</a></dd>
+                    <dd><a href="">人才招聘</a></dd>
+                </dl>
+                <dl>
+                    <dt>客户服务</dt>
+                    <dd><a href="">支付方式</a></dd>
+                    <dd><a href="">在线沟通</a></dd>
+                </dl>
+            </div>
+            <div class="contact">
+                <div class="phone">800-000-0000</div>
+                <div class="time">周一至周五 09:00 - 18:00</div>
+                <ul class="contact-way-list clearfix">
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="copyright-content clearfix">
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
+                <p class="copyright">2009-2016 © 广州聚慧网络科技有限公司 版权所有 粤ICP备******号-*  网站地图</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

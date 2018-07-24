@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>客户案例</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .case {
+            width: 1200px;
+            margin: 0 auto;
+            padding-top: 90px;
+        }
+        .case .tab-btn-list {
+            width: 1200px;
+            height: 90px;
+            border-radius: 45px;
+            background: #EEEEEE;
+        }
+        .case .tab-btn {
+            position: relative;
+            float: left;
+            width: 300px;
+            height: 90px;
+            line-height: 90px;
+            text-align: center;
+            border-radius: 45px;
+            cursor: pointer;
+        }
+        .case .tab-btn.active {
+            background: #3497DB;
+            color: #fff;
+        }
+        .case .tab-btn.active::after {
+            display: block;
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            height: 0;
+            border-top: 20px solid #3497DB;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+        }
+        .case .tab-btn a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #666;
+        }
+        .case .tab-content {
+            display: none;
+        }
+        .case .tab-content.active {
+            display: block;
+        }
+        .case .tab-content .head {
+            text-align: center;
+        }
+        .case .tab-content .head .title {
+            padding-top: 50px;
+            line-height: 1;
+            font-size: 30px;
+            color: #333;
+        }
+        .case .tab-content .head .sub-title {
+            padding-top: 10px;
+            line-height: 1;
+            font-size: 16px;
+            color: #888;
+        } 
+        .case .search-wrap {
+            margin-top: 24px;
+        }
+        .case .search-wrap form {
+            position: relative;
+            width: 486px;
+            margin: 0 auto;
+        }
+        .case .search-wrap form .search {
+            width: 100%;
+            height: 54px;
+            padding: 0 100px 0 30px;
+            border: 1px solid #888888;
+            outline: none;
+            border-radius: 27px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #888;
+        }
+        .case .search-wrap form .icon-search {
+            position: absolute;
+            right: 33px;
+            top: 10px;
+            display: inline-block;
+            width: 33px;
+            height: 33px;
+            background: url(../image/icon-search.png) no-repeat center;
+            background-size: 100%;
+        }
+        .case .case-list {
+            margin-top: 50px;
+        }
+        .case .case-item {
+            float: left;
+            margin-right: 116px;
+            margin-bottom: 40px;
+            width: 213px;
+        }
+        .case .app-case-item:nth-child(4n),
+        .case .case-item:nth-child(4n) {
+            margin-right: 0;
+        }
+        .case .case-item img {
+            display: block;
+            width: 100%;
+            height: 177px;
+            background: #f00;
+        }
+        .case .more-tip {
+            line-height: 40px;
+            text-align: center;
+            font-size: 20px;
+            color: #888;
+        }
+        .case .app-case-item {
+            float: left;
+            margin-right: 120px;
+            margin-bottom: 40px;
+            width: 210px;
+            height: 400px;
+        }
+        .case .app-case-item img {
+            width: 100%;
+            height: 100%;
+        }
+        .case .pc-case-item {
+            position: relative;
+            float: left;
+            margin-right: 16px;
+            margin-bottom: 60px;
+            width: 288px;
+            height: 264px;
+        }
+        .case .pc-case-item .case-info img {
+            display: block;
+            width: 100%;
+            height: 218px;
+            background: #ccc;
+        }
+        .case .pc-case-item .case-info .name {
+            padding-top: 30px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 14px;
+            color: #000;;
+        }
+        .case .pc-case-item .case-info .trade {
+            margin-right: 10px;
+            font-size: 16px;
+            color: #A4A4A4;
+        }
+        .case .pc-case-item .case-info:hover + .mask {
+            display: block;
+        }
+        .case .pc-case-item .mask:hover {
+            display: block;
+        }
+        .case .pc-case-item .mask {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 218px;
+            background: rgba(0, 0, 0, .8);
+            text-align: center;
+        }
+        .case .pc-case-item .mask .name {
+            padding-top: 50px;
+            line-height: 1;
+            font-size: 16px;
+            color: #fff;
+        }
+        .case .pc-case-item .mask .trade {
+            padding-top: 10px;
+            line-height: 1;
+            font-size: 14px;
+            color: #fff;
+        }
+        .case .pc-case-item .mask button {
+            margin-top: 30px;
+            width: 140px;
+            height: 40px;
+            border: none;
+            border-radius: 3px;
+            background: #3497DB;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content clearfix">
+            <div class="logo-wrap">
+                <img src="../image/logo.png" alt="">
+            </div>
+            <nav class="topbar-nav clearfix">
+                <div class="nav-item active">
+                    <a href="">首页</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">客户案例</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">使用手册</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">定制开发</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">关于我们</a>
+                </div>
+            </nav>
+            <div class="topbar-right clearfix">
+                <div class="regist"><a href="">免费注册</a></div>
+                <div class="login"><a href="">登录</a></div>
+                <div class="personal-center">
+                    <a href="">
+                        <i class="iconfont icon-setting"></i>
+                        <span class="text">个人中心</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="case">
+            <ul class="tab-btn-list clearfix">
+                <li class="tab-btn active">PC+WEB+小程序+APP</li>
+                <li class="tab-btn">
+                    <span class="icon-app"></span>
+                    <span class="text">APP</span>
+                </li>
+                <li class="tab-btn">
+                    <span class="icon-pv"></span>
+                    <span class="text">PC</span>
+                </li>
+                <li class="tab-btn">
+                    <span class="icon-miniapp"></span>
+                    <span class="text">小程序</span>
+                </li>
+            </ul>
+            <ul class="tab-content-list">
+                <li class="tab-content active">
+                    <div class="head">
+                        <h2 class="title">四合一套餐案例</h2>
+                        <h3 class="sub-title">Real User's Examples-Three-in-one</h3>
+                    </div>
+                    <div class="search-wrap">
+                        <form action="">
+                            <input class="search" type="text" placeholder="搜索你需要查找的行业案例">
+                            <span class="icon-search"></span>    
+                        </form>
+                    </div>
+                    <div class="content">
+                        <ul class="case-list clearfix">
+                            <li class="case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="more-tip">更多模板，正在飞速赶来...</p>
+                    </div>
+                </li>
+                <li class="tab-content">
+                    <div class="head">
+                        <h2 class="title">APP案例</h2>
+                        <h3 class="sub-title">Real User's Examples-Three-in-one</h3>
+                    </div>
+                    <div class="search-wrap">
+                        <form action="">
+                            <input class="search" type="text" placeholder="搜索你需要查找的行业案例">
+                            <span class="icon-search"></span>    
+                        </form>
+                    </div>
+                    <div class="content">
+                        <ul class="case-list clearfix">
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="more-tip">更多模板，正在飞速赶来...</p>
+                    </div>
+                </li>
+                <li class="tab-content">
+                    <div class="head">
+                        <h2 class="title">PC端套餐案例</h2>
+                        <!-- <h3 class="sub-title">Real User's Examples-Three-in-one</h3> -->
+                    </div>
+                    <!-- <div class="search-wrap">
+                        <form action="">
+                            <input class="search" type="text" placeholder="搜索你需要查找的行业案例">
+                            <span class="icon-search"></span>    
+                        </form>
+                    </div> -->
+                    <div class="content">
+                        <ul class="case-list clearfix">
+                            <li class="case-item pc-case-item">
+                                <a href="">
+                                    <div class="case-info">
+                                        <img src="../image/pc-case.png" alt="">
+                                        <div class="name"><em class="trade">文化</em>第二届国家大剧院粤剧艺术周</div>
+                                    </div>
+                                    <div class="mask">
+                                        <div class="name">第二届国家大剧院粤剧艺术周</div>
+                                        <div class="trade">行业：文化、娱乐休闲</div>
+                                        <button>浏览</button>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="case-item pc-case-item">
+                                <a href="">
+                                    <div class="case-info">
+                                        <img src="" alt="">
+                                        <div class="name"><em class="trade">文化</em>第二届国家大剧院粤剧艺术周</div>
+                                    </div>
+                                    <div class="mask">
+                                        <div class="name">第二届国家大剧院粤剧艺术周</div>
+                                        <div class="trade">行业：文化、娱乐休闲</div>
+                                        <button>浏览</button>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="case-item pc-case-item">
+                                <a href="">
+                                    <div class="case-info">
+                                        <img src="" alt="">
+                                        <div class="name"><em class="trade">文化</em>第二届国家大剧院粤剧艺术周</div>
+                                    </div>
+                                    <div class="mask">
+                                        <div class="name">第二届国家大剧院粤剧艺术周</div>
+                                        <div class="trade">行业：文化、娱乐休闲</div>
+                                        <button>浏览</button>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="case-item pc-case-item">
+                                <a href="">
+                                    <div class="case-info">
+                                        <img src="" alt="">
+                                        <div class="name"><em class="trade">文化</em>第二届国家大剧院粤剧艺术周</div>
+                                    </div>
+                                    <div class="mask">
+                                        <div class="name">第二届国家大剧院粤剧艺术周</div>
+                                        <div class="trade">行业：文化、娱乐休闲</div>
+                                        <button>浏览</button>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="case-item pc-case-item">
+                                <a href="">
+                                    <div class="case-info">
+                                        <img src="" alt="">
+                                        <div class="name"><em class="trade">文化</em>第二届国家大剧院粤剧艺术周</div>
+                                    </div>
+                                    <div class="mask">
+                                        <div class="name">第二届国家大剧院粤剧艺术周</div>
+                                        <div class="trade">行业：文化、娱乐休闲</div>
+                                        <button>浏览</button>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="case-item pc-case-item">
+                                <a href="">
+                                    <div class="case-info">
+                                        <img src="" alt="">
+                                        <div class="name"><em class="trade">文化</em>第二届国家大剧院粤剧艺术周</div>
+                                    </div>
+                                    <div class="mask">
+                                        <div class="name">第二届国家大剧院粤剧艺术周</div>
+                                        <div class="trade">行业：文化、娱乐休闲</div>
+                                        <button>浏览</button>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="case-item pc-case-item">
+                                <a href="">
+                                    <div class="case-info">
+                                        <img src="" alt="">
+                                        <div class="name"><em class="trade">文化</em>第二届国家大剧院粤剧艺术周</div>
+                                    </div>
+                                    <div class="mask">
+                                        <div class="name">第二届国家大剧院粤剧艺术周</div>
+                                        <div class="trade">行业：文化、娱乐休闲</div>
+                                        <button>浏览</button>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="case-item pc-case-item">
+                                <a href="">
+                                    <div class="case-info">
+                                        <img src="" alt="">
+                                        <div class="name"><em class="trade">文化</em>第二届国家大剧院粤剧艺术周</div>
+                                    </div>
+                                    <div class="mask">
+                                        <div class="name">第二届国家大剧院粤剧艺术周</div>
+                                        <div class="trade">行业：文化、娱乐休闲</div>
+                                        <button>浏览</button>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="more-tip">更多模板，正在飞速赶来...</p>
+                    </div>
+                </li>
+                <li class="tab-content">
+                    <div class="head">
+                        <h2 class="title">小程序案例</h2>
+                        <h3 class="sub-title">Real User's Examples-Three-in-one</h3>
+                    </div>
+                    <div class="search-wrap">
+                        <form action="">
+                            <input class="search" type="text" placeholder="搜索你需要查找的行业案例">
+                            <span class="icon-search"></span>    
+                        </form>
+                    </div>
+                    <div class="content">
+                        <ul class="case-list clearfix">
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                            <li class="case-item app-case-item">
+                                <a href="">
+                                    <img src="" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="more-tip">更多模板，正在飞速赶来...</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content clearfix">
+            <div class="nav clearfix">
+                <dl>
+                    <dt>公司产品</dt>
+                    <dd><a href="">APP开发</a></dd>
+                    <dd><a href="">网站开发</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">公司简介</a></dd>
+                    <dd><a href="">新闻资讯</a></dd>
+                    <dd><a href="">人才招聘</a></dd>
+                </dl>
+                <dl>
+                    <dt>客户服务</dt>
+                    <dd><a href="">支付方式</a></dd>
+                    <dd><a href="">在线沟通</a></dd>
+                </dl>
+            </div>
+            <div class="contact">
+                <div class="phone">800-000-0000</div>
+                <div class="time">周一至周五 09:00 - 18:00</div>
+                <ul class="contact-way-list clearfix">
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="copyright-content clearfix">
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
+                <p class="copyright">2009-2016 © 广州聚慧网络科技有限公司 版权所有 粤ICP备******号-*  网站地图</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.3.3.1.js"></script>
+    <script>
+        $('.tab-btn').on('click', function(e) {
+            if ($(this).hasClass('active')) {
+                return
+            }
+            var index = $(this).index()
+            $('.tab-btn.active').removeClass('active')
+            $('.tab-content.active').removeClass('active')
+            $(this).addClass('active')
+            $('.tab-content').eq(index).addClass('active')
+        })
+    </script>
+</body>
+</html>

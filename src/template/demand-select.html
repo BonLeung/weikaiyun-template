@@ -13,9 +13,140 @@
             padding-bottom: 90px;
             background: rgb(238, 238, 238);
         }
-        .main .section-content {
+        .main .content {
             width: 1200px;
             margin: 0 auto;
+        }
+        .main .content .title {
+            line-height: 120px;
+            font-size: 30px;
+            color: #333;
+        }
+        .main .content .server-item {
+            float: left;
+            width: 390px;
+            margin-right: 15px;
+            background: #fff;
+        }
+        .main .content .server-item:nth-child(3n) {
+            margin-right: 0;
+        }
+        .main .content .server-item .config {
+            height: 400px;
+            background: #3AC0FF;
+        }
+        .main .content .server-item .config .top {
+            height: 225px;
+            padding: 20px;
+            border-bottom: 1px dashed #ccc;
+            box-sizing: border-box;
+        }
+        .main .content .server-item .config .name {
+            font-size: 24px;
+            color: #fff;
+        }
+        .main .content .server-item .config .top .desc-list {
+            margin-top: 15px;
+        }
+        .main .content .server-item .config .top .desc-item {
+            line-height: 24px;
+            font-size: 15px;
+            color: #fff;
+        }
+        .main .content .server-item .config .bottom {
+            height: 175px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .main .content .server-item .config .bottom .config-item {
+            line-height: 24px;
+            font-size: 15px;
+            color: #fff;
+        }
+        .main .content .server-item .foot {
+            padding: 0 30px;
+            height: 100px;
+            line-height: 100px;
+            background: #fff;
+            box-sizing: border-box;
+        }
+        .main .content .server-item .foot .price {
+            margin-top: 32px;
+            line-height: 1;
+            float: left;
+            font-size: 18px;
+            color: #333;
+        }
+        .main .content .server-item .foot .price em {
+            font-size: 36px;
+            color: #f00;
+        }
+        .main .content .server-item .foot button {
+            float: right;
+            margin-top: 30px;
+            width: 110px;
+            height: 40px;
+            outline: none;
+            box-sizing: border-box;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+            color: #888;
+            cursor: pointer;
+        }
+        .main .content .server-item .foot button.active {
+            background: #3AC0FF;
+            border: none;
+            color: #fff;
+        }
+        .main .content .server-item.im-server {
+            height: 420px;
+        }
+        .main .content .server-item.im-server .config {
+            padding: 20px;
+            height: 320px;
+            box-sizing: border-box;
+        }
+        .main .content .server-item.im-server .config-list {
+            margin-top: 15px;
+        }
+        .main .content .server-item.im-server .config-item {
+            line-height: 24px;
+            font-size: 15px;
+            color: #fff;
+        }
+        .main .content .server-item.live-streaming {
+            height: 200px;
+        }
+        .main .content .server-item.live-streaming .config {
+            padding: 20px;
+            height: 120px;
+            box-sizing: border-box;
+        }
+        .main .content .server-item.live-streaming .desc {
+            margin-top: 15px;
+            line-height: 20px;
+            font-size: 14px;
+            color: #fff;
+        }
+        .main .content .server-item.live-streaming .foot {
+            height: 80px;
+        }
+        .main .content .buy-wrap {
+            margin-top: 90px;
+            text-align: center;
+        }
+        .main .content .buy-wrap button {
+            width: 260px;
+            height: 70px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background: #3AC0FF;
+            font-size: 30px;
+            color: #fff;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -60,91 +191,181 @@
                <div class="title">服务器配置推荐</div>
                <ul class="server-list clearfix">
                     <li class="server-item recommend-server">
-                        <a href="">
-                            <div class="config">
-                                <div class="top">
-                                    <div class="name">标准型S1</div>
-                                    <ul class="desc-list">
-                                        <li class="desc-item">较新一代的标准型实例</li>
-                                        <li class="desc-item">整数和浮点运算性能相比标准型S1 提升40%</li>
-                                        <li class="desc-item">搭配DDR4内存，性能提升30%</li>
-                                        <li class="desc-item">网络收发能力最高可达 40万 pps</li>
-                                    </ul>
-                                </div>
-                                <div class="bottom">
-                                    <ul class="config-list">
-                                        <li class="config-item">最高配：56vCPU 224</li>
-                                        <li class="config-item">CPU类型：2.40GHz Intel E5-Xeon Broadwell v4</li>
-                                        <li class="config-item">内存类型：DDR4</li>
-                                        <li class="config-item">系统盘：本地盘、普通云盘、高效云盘、SSD云盘</li>
-                                        <li class="config-item">数据盘 :本地盘、普通云盘、高效云盘、SSD云</li>
-                                    </ul>
-                                </div>
+                        <div class="config">
+                            <div class="top">
+                                <div class="name">标准型S1</div>
+                                <ul class="desc-list">
+                                    <li class="desc-item">较新一代的标准型实例</li>
+                                    <li class="desc-item">整数和浮点运算性能相比标准型S1 提升40%</li>
+                                    <li class="desc-item">搭配DDR4内存，性能提升30%</li>
+                                    <li class="desc-item">网络收发能力最高可达 40万 pps</li>
+                                </ul>
                             </div>
-                            <div class="foot">
-                                <div class="price"><em>504</em>元/年</div>
-                                <button>购买此机型</button>
+                            <div class="bottom">
+                                <ul class="config-list">
+                                    <li class="config-item">最高配：56vCPU 224</li>
+                                    <li class="config-item">CPU类型: 2.40GHz Intel E5-Xeon Broadwell v4</li>
+                                    <li class="config-item">内存类型：DDR4</li>
+                                    <li class="config-item">系统盘：本地盘、普通云盘、高效云盘、SSD云盘</li>
+                                    <li class="config-item">数据盘 :本地盘、普通云盘、高效云盘、SSD云</li>
+                                </ul>
                             </div>
-                        </a>
+                        </div>
+                        <div class="foot clearfix">
+                            <div class="price"><em>504</em>元/年</div>
+                            <button class="active">购买此机型</button>
+                        </div>
                     </li>
                     <li class="server-item recommend-server">
-                        <a href="">
-                            <div class="config">
-                                <div class="top">
-                                    <div class="name">标准型S1</div>
-                                    <ul class="desc-list">
-                                        <li class="desc-item">较新一代的标准型实例</li>
-                                        <li class="desc-item">整数和浮点运算性能相比标准型S1 提升40%</li>
-                                        <li class="desc-item">搭配DDR4内存，性能提升30%</li>
-                                        <li class="desc-item">网络收发能力最高可达 40万 pps</li>
-                                    </ul>
-                                </div>
-                                <div class="bottom">
-                                    <ul class="config-list">
-                                        <li class="config-item">最高配：56vCPU 224</li>
-                                        <li class="config-item">CPU类型：2.40GHz Intel E5-Xeon Broadwell v4</li>
-                                        <li class="config-item">内存类型：DDR4</li>
-                                        <li class="config-item">系统盘：本地盘、普通云盘、高效云盘、SSD云盘</li>
-                                        <li class="config-item">数据盘 :本地盘、普通云盘、高效云盘、SSD云</li>
-                                    </ul>
-                                </div>
+                        <div class="config">
+                            <div class="top">
+                                <div class="name">标准型S1</div>
+                                <ul class="desc-list">
+                                    <li class="desc-item">较新一代的标准型实例</li>
+                                    <li class="desc-item">整数和浮点运算性能相比标准型S1 提升40%</li>
+                                    <li class="desc-item">搭配DDR4内存，性能提升30%</li>
+                                    <li class="desc-item">网络收发能力最高可达 40万 pps</li>
+                                </ul>
                             </div>
-                            <div class="foot">
-                                <div class="price"><em>504</em>元/年</div>
-                                <button>购买此机型</button>
+                            <div class="bottom">
+                                <ul class="config-list">
+                                    <li class="config-item">最高配：56vCPU 224</li>
+                                    <li class="config-item">CPU类型：2.40GHz Intel E5-Xeon Broadwell v4</li>
+                                    <li class="config-item">内存类型：DDR4</li>
+                                    <li class="config-item">系统盘：本地盘、普通云盘、高效云盘、SSD云盘</li>
+                                    <li class="config-item">数据盘 :本地盘、普通云盘、高效云盘、SSD云</li>
+                                </ul>
                             </div>
-                        </a>
+                        </div>
+                        <div class="foot clearfix">
+                            <div class="price"><em>504</em>元/年</div>
+                            <button>购买此机型</button>
+                        </div>
                     </li>
                    <li class="server-item recommend-server">
-                        <a href="">
-                            <div class="config">
-                                <div class="top">
-                                    <div class="name">标准型S1</div>
-                                    <ul class="desc-list">
-                                        <li class="desc-item">较新一代的标准型实例</li>
-                                        <li class="desc-item">整数和浮点运算性能相比标准型S1 提升40%</li>
-                                        <li class="desc-item">搭配DDR4内存，性能提升30%</li>
-                                        <li class="desc-item">网络收发能力最高可达 40万 pps</li>
-                                    </ul>
-                                </div>
-                                <div class="bottom">
-                                    <ul class="config-list">
-                                        <li class="config-item">最高配：56vCPU 224</li>
-                                        <li class="config-item">CPU类型：2.40GHz Intel E5-Xeon Broadwell v4</li>
-                                        <li class="config-item">内存类型：DDR4</li>
-                                        <li class="config-item">系统盘：本地盘、普通云盘、高效云盘、SSD云盘</li>
-                                        <li class="config-item">数据盘 :本地盘、普通云盘、高效云盘、SSD云</li>
-                                    </ul>
-                                </div>
+                        <div class="config">
+                            <div class="top">
+                                <div class="name">标准型S1</div>
+                                <ul class="desc-list">
+                                    <li class="desc-item">较新一代的标准型实例</li>
+                                    <li class="desc-item">整数和浮点运算性能相比标准型S1 提升40%</li>
+                                    <li class="desc-item">搭配DDR4内存，性能提升30%</li>
+                                    <li class="desc-item">网络收发能力最高可达 40万 pps</li>
+                                </ul>
                             </div>
-                            <div class="foot">
-                                <div class="price"><em>504</em>元/年</div>
-                                <button>购买此机型</button>
+                            <div class="bottom">
+                                <ul class="config-list">
+                                    <li class="config-item">最高配：56vCPU 224</li>
+                                    <li class="config-item">CPU类型：2.40GHz Intel E5-Xeon Broadwell v4</li>
+                                    <li class="config-item">内存类型：DDR4</li>
+                                    <li class="config-item">系统盘：本地盘、普通云盘、高效云盘、SSD云盘</li>
+                                    <li class="config-item">数据盘 :本地盘、普通云盘、高效云盘、SSD云</li>
+                                </ul>
                             </div>
-                        </a>
+                        </div>
+                        <div class="foot clearfix">
+                            <div class="price"><em>504</em>元/年</div>
+                            <button>购买此机型</button>
+                        </div>
                    </li>
                </ul>
            </section>
+           <section class="section">
+            <div class="title">即时通讯</div>
+            <ul class="server-list clearfix">
+                 <li class="server-item im-server">
+                     <div class="config">
+                        <div class="name">体验版</div>
+                        <ul class="config-list">
+                            <li class="config-item">对话记录保存 30 天</li>
+                            <li class="config-item">对话并发数 2 条</li>
+                            <li class="config-item">快捷回复</li>
+                            <li class="config-item">自动消息</li>
+                            <li class="config-item">消息预知</li>
+                            <li class="config-item">工单系统</li>
+                        </ul>
+                     </div>
+                     <div class="foot clearfix">
+                         <div class="price"><em>504</em>元/年</div>
+                         <button class="active">购买此机型</button>
+                     </div>
+                 </li>
+                 <li class="server-item im-server">
+                     <div class="config">   
+                        <div class="name">专业版</div>
+                        <ul class="config-list">
+                            <li class="config-item">对话记录保存 30 天</li>
+                            <li class="config-item">对话并发数 2 条</li>
+                            <li class="config-item">快捷回复</li>
+                            <li class="config-item">自动消息</li>
+                            <li class="config-item">消息预知</li>
+                            <li class="config-item">工单系统</li>
+                        </ul>
+                     </div>
+                     <div class="foot clearfix">
+                         <div class="price"><em>504</em>元/年</div>
+                         <button>购买此机型</button>
+                     </div>
+                 </li>
+                <li class="server-item im-server">
+                     <div class="config">
+                         <div class="name">企业版</div>
+                         <ul class="config-list">
+                            <li class="config-item">对话记录保存 30 天</li>
+                            <li class="config-item">对话并发数 2 条</li>
+                            <li class="config-item">快捷回复</li>
+                            <li class="config-item">自动消息</li>
+                            <li class="config-item">消息预知</li>
+                            <li class="config-item">工单系统</li>
+                        </ul>
+                     </div>
+                     <div class="foot clearfix">
+                         <div class="price"><em>504</em>元/年</div>
+                         <button>购买此机型</button>
+                     </div>
+                </li>
+            </ul>
+        </section>
+        <section class="section">
+            <div class="title">直播流量</div>
+            <ul class="server-list clearfix">
+                 <li class="server-item live-streaming">
+                     <div class="config">
+                         <div class="name">搭配套餐</div>
+                         <div class="desc">月套餐20T++20G夜间流量+10G流量免费送</div>
+                     </div>
+                     <div class="foot clearfix">
+                         <div class="price"><em>504</em>元/年</div>
+                         <button class="active">购买此机型</button>
+                     </div>
+                 </li>
+                 <li class="server-item live-streaming">
+                     <div class="config">
+                         <div class="name">套餐一推荐</div>
+                         <div class="desc">月套餐20T++20G夜间流量+10G流量免费送</div>
+                     </div>
+                     <div class="foot clearfix">
+                         <div class="price"><em>504</em>元/年</div>
+                         <button>购买此机型</button>
+                     </div>
+                 </li>
+                <li class="server-item live-streaming">
+                     <div class="config">
+                         <div class="name">套餐二推荐</div>
+                         <div class="desc">月套餐20T++20G夜间流量+10G流量免费送</div>
+                     </div>
+                     <div class="foot clearfix">
+                         <div class="price"><em>504</em>元/年</div>
+                         <button>购买此机型</button>
+                     </div>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <div class="buy-wrap">
+                <button>去支付</button>
+            </div>
+        </section>
        </div>
     </div>
     <footer class="footer">

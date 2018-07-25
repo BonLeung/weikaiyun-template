@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>支付</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .main {
+            min-width: 1200px;
+            max-width: 1920px;
+        }
+        .main .content {
+            width: 1200px;
+            margin: 0 auto;
+            padding-bottom: 215px;
+        }
+        .main .content .title {
+            padding-left: 20px;
+            line-height: 64px;
+            border-bottom: 1px solid #ccc;
+            font-size: 24px;
+            color: #666;
+        }
+        .main .content .goods-info {
+            padding-left: 60px;
+        }
+        .main .content .goods-info .price,
+        .main .content .goods-info .name {
+            line-height: 50px;
+            font-size: 18px;
+            color: #666;
+        }
+        .main .content .goods-info .price em {
+            font-size: 24px;
+            color: #3497DB;
+        }
+        .main .content .payway .label {
+            padding-top: 15px;
+            padding-left: 70px;
+            font-size: 20px;
+            color: #333;
+        }
+        .main .content .payway .payway-list {
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0;
+        }
+        .main .content .payway .payway-item {
+            display: inline-block;
+            margin-right: 50px;
+            width: 205px;
+            height: 157px;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+        .main .content .payway .payway-item.active {
+            border: 1px solid #3497DB;
+        }
+        .main .content .payway .payway-item .icon-alipay {
+            margin: 60px auto 0;
+            width: 118px;
+            height: 38px;
+            background: url(../image/pay-icons.png) no-repeat;
+            background-position: -195px -239px;
+        }
+        .main .content .payway .payway-item .icon-wechatpay {
+            margin: 55px auto 0;
+            width: 176px;
+            height: 47px;
+            background: url(../image/pay-icons.png) no-repeat;
+            background-position: -330px -230px;
+        }
+        .main .content .payway .payway-item .icon-unionpay {
+            margin: 58px auto 0;
+            width: 163px;
+            height: 42px;
+            background: url(../image/pay-icons.png) no-repeat;
+            background-position: 0 -240px;
+        }
+        .main .content .payway .payway-item:last-child {
+            margin-right: 0;
+        }
+        .main .content .payway-content .bank-item {
+            float: left;
+            margin-right: 80px;
+            margin-bottom: 10px;
+            width: 240px;
+            height: 66px;
+            font-size: 0;
+            cursor: pointer;
+        }
+        .main .content .payway-content .bank-item:nth-child(4n) {
+            margin-right: 0;
+        }
+        .main .content .payway-content .bank-item .img-wrap {
+            display: inline-block;
+            width: 208px;
+            height: 66px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .main .content .payway-content .bank-item .icon-check {
+            position: relative;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 10px;
+            margin-top: 22px;
+            width: 21px;
+            height: 21px;
+            border: 1px solid #666;
+            border-radius: 50%;
+            box-sizing: border-box;
+        }
+        .main .content .payway-content .bank-item .icon-check.active::after {
+            display: block;
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: #3497DB;
+        }
+        .main .content .operate-btn-wrap {
+            margin-top: 100px;
+            text-align: center;
+        }
+        .main .content .operate-btn-wrap button {
+            width: 145px;
+            height: 50px;
+            border-radius: 25px;
+            box-sizing: border-box;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        .main .content .operate-btn-wrap button.cancel {
+            margin-right: 80px;
+            background: #fff;
+            border: 1px solid #888;
+            color: #333;
+        }
+        .main .content .operate-btn-wrap button.confirm {
+            border: none;
+            background: #3497DB;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content clearfix">
+            <div class="logo-wrap">
+                <img src="../image/logo.png" alt="">
+            </div>
+            <nav class="topbar-nav clearfix">
+                <div class="nav-item">
+                    <a href="">首页</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">客户案例</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">使用手册</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">定制开发</a>
+                </div>
+                <div class="nav-item active">
+                    <a href="">关于我们</a>
+                </div>
+            </nav>
+            <div class="topbar-right clearfix">
+                <div class="regist"><a href="">免费注册</a></div>
+                <div class="login"><a href="">登录</a></div>
+                <div class="personal-center">
+                    <a href="">
+                        <i class="iconfont icon-setting"></i>
+                        <span class="text">个人中心</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="content">
+            <h2 class="title">信息提示</h2>
+            <div class="pay-content">
+                <div class="goods-info">
+                    <div class="name">网站版本：标准版</div>
+                    <div class="price">费用合计：<em>1880.00</em>元/3年送2年</div>
+                </div>
+                <div class="payway">
+                    <div class="label">请选择支付方式：</div>
+                    <ul class="payway-list">
+                        <li class="payway-item">
+                            <div class="icon-alipay"></div>
+                        </li>
+                        <li class="payway-item">
+                            <div class="icon-wechatpay"></div>
+                        </li>
+                        <li class="payway-item active">
+                            <div class="icon-unionpay"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="payway-content">
+                    <ul class="bank-list clearfix">
+                        <li class="bank-item">
+                            <span class="icon-check active"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                         <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                        <li class="bank-item">
+                            <span class="icon-check"></span>
+                            <div class="img-wrap"></div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="operate-btn-wrap">
+                    <button class="cancel">取消</button>
+                    <button class="confirm">确认支付</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content clearfix">
+            <div class="nav clearfix">
+                <dl>
+                    <dt>公司产品</dt>
+                    <dd><a href="">APP开发</a></dd>
+                    <dd><a href="">网站开发</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">公司简介</a></dd>
+                    <dd><a href="">新闻资讯</a></dd>
+                    <dd><a href="">人才招聘</a></dd>
+                </dl>
+                <dl>
+                    <dt>客户服务</dt>
+                    <dd><a href="">支付方式</a></dd>
+                    <dd><a href="">在线沟通</a></dd>
+                </dl>
+            </div>
+            <div class="contact">
+                <div class="phone">800-000-0000</div>
+                <div class="time">周一至周五 09:00 - 18:00</div>
+                <ul class="contact-way-list clearfix">
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="copyright-content clearfix">
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
+                <p class="copyright">2009-2016 © 广州聚慧网络科技有限公司 版权所有 粤ICP备******号-*  网站地图</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

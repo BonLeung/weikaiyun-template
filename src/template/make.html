@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>APP制作</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .main {
+            padding-bottom: 90px;
+            padding-top: 36px;
+            background: rgb(238, 238, 238);
+            overflow: hidden;
+        }
+        .main .content {
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .main .content .make {
+            background: #fff;
+        }
+        .main .content .make .title {
+            padding-left: 30px;
+            height: 55px;
+            line-height: 55px;
+            border-bottom: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 24px;
+            color: #333;
+        }
+        .main .content .make form {
+            padding: 36px 70px 40px 70px;
+        }
+        .main .make form .input-row {
+            margin-bottom: 46px;
+        }
+        .main .make form .input-row label {
+            display: inline-block;
+            width: 60px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+        }
+        .main .make form .input-row input {
+            padding: 0 5px;
+            width: 410px;
+            height: 34px;
+            box-sizing: border-box;
+            border: 1px solid #888;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .main .make form .input-row.logo label {
+            float: left;
+        }
+        .main .make form .input-row.logo .img-wrap {
+            float: left;
+            width: 156px;
+            height: 156px;
+        }
+        .main .make form .input-row.logo .tips {
+            float: left;
+            margin-top: 80px;
+        }
+        .main .make form .tips-item {
+            line-height: 30px;
+            font-size: 14px;
+            color: #888;
+        }
+        .main .make form .tips-item em {
+            color: #f00;
+        }
+        .main .make form .btn-wrap {
+            margin-top: 110px;
+            text-align: center;
+        }
+        .main .make form .btn-wrap button {
+            width: 140px;
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+            background: #01ACFC;
+            outline: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content clearfix">
+            <div class="logo-wrap">
+                <img src="../image/logo.png" alt="">
+            </div>
+            <nav class="topbar-nav clearfix">
+                <div class="nav-item">
+                    <a href="">首页</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">客户案例</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">使用手册</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">定制开发</a>
+                </div>
+                <div class="nav-item active">
+                    <a href="">关于我们</a>
+                </div>
+            </nav>
+            <div class="topbar-right clearfix">
+                <div class="regist"><a href="">免费注册</a></div>
+                <div class="login"><a href="">登录</a></div>
+                <div class="personal-center">
+                    <a href="">
+                        <i class="iconfont icon-setting"></i>
+                        <span class="text">个人中心</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="content">
+            <div class="make">
+                <div class="title">应用制作</div>
+                <form action="">
+                    <div class="input-row">
+                        <label>产品名称</label>
+                        <input type="text" placeholder="请输入理想的应用名称，以小写字母、汉字、字母组成，最多不超过10个字">
+                    </div>
+                    <div class="input-row clearfix logo">
+                        <label>LOGO</label>
+                        <div class="img-wrap">
+
+                        </div>
+                        <div class="tips">
+                            <ul class="tips-list">
+                                <li class="tips-item"><em>*</em>尺寸为1288*1288、256*256、512*512.</li>
+                                <li class="tips-item">支持PNG、JPG、GIF格式图片，其他格式图片不支持。</li>
+                                <li class="tips-item">注意文件名不能带中文。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btn-wrap">
+                        <button class="next">下一步</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content clearfix">
+            <div class="nav clearfix">
+                <dl>
+                    <dt>公司产品</dt>
+                    <dd><a href="">APP开发</a></dd>
+                    <dd><a href="">网站开发</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">公司简介</a></dd>
+                    <dd><a href="">新闻资讯</a></dd>
+                    <dd><a href="">人才招聘</a></dd>
+                </dl>
+                <dl>
+                    <dt>客户服务</dt>
+                    <dd><a href="">支付方式</a></dd>
+                    <dd><a href="">在线沟通</a></dd>
+                </dl>
+            </div>
+            <div class="contact">
+                <div class="phone">800-000-0000</div>
+                <div class="time">周一至周五 09:00 - 18:00</div>
+                <ul class="contact-way-list clearfix">
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="copyright-content clearfix">
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
+                <p class="copyright">2009-2016 © 广州聚慧网络科技有限公司 版权所有 粤ICP备******号-*  网站地图</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

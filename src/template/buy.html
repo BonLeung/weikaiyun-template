@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购买</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .buy {
+            width: 1200px;
+            margin: 0 auto;
+            padding-top: 90px;
+            padding-bottom: 110px;
+        }
+        .buy .tab-btn-list {
+            width: 1200px;
+            height: 90px;
+            border-radius: 45px;
+            background: #EEEEEE;
+        }
+        .buy .tab-btn {
+            position: relative;
+            float: left;
+            width: 240px;
+            height: 90px;
+            line-height: 90px;
+            text-align: center;
+            border-radius: 45px;
+            cursor: pointer;
+        }
+        .buy .tab-btn.active {
+            background: #3497DB;
+            color: #fff;
+        }
+        .buy .tab-btn.active::after {
+            display: block;
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            height: 0;
+            border-top: 20px solid #3497DB;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+        }
+        .buy .tab-btn a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: #666;
+        }
+        .buy .tab-content {
+            display: none;
+        }
+        .buy .tab-content.active {
+            display: block;
+        }
+        .buy .tab-content > .head .title {
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px;
+            color: #888;
+        }
+        .buy .tab-content .multiple {
+            text-align: center;
+        }
+        .buy .tab-content .multiple .type-item {
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 46px;
+            width: 105px;
+            height: 65px;
+            text-align: center;
+            line-height: 65px;
+            border: 1px solid #CCCCCC;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+        }
+        .buy .tab-content .multiple .type-item.active {
+            border: 1px solid #3497DB;
+        }
+        .buy .tab-content .multiple .btn {
+            width: 105px;
+            height: 65px;
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            background: #3497DB;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .buy .tab-content .version {
+            margin-top: 60px;
+        }
+        .buy .tab-content .version .plan {
+            float: left;
+            width: 400px;
+            box-sizing: border-box;
+        }
+        .buy .tab-content .version .plan .head {
+            height: 187px;   
+            line-height: 186px;
+            background: rgb(25, 142, 222);
+        }
+        .buy .tab-content .version .plan .head .title {
+            padding-left: 30px;
+            font-size: 24px;
+            color: #fff;
+        }
+        .buy .tab-content .version .plan .plan-content {
+            width: 399px;
+            border-left: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .buy .tab-content .version .plan .plan-content .left {
+            float: left;
+            width: 99px;
+            height: 420px;
+            text-align: center;
+            line-height: 420px;
+        }
+        .buy .tab-content .version .plan .plan-content .right {
+            width: 299px;
+            float: right;
+        }
+        .buy .tab-content .version .plan .plan-content .attr {
+            padding-left: 40px;
+            height: 40px;
+            line-height: 40px;
+        }
+        .buy .tab-content .version .plan .plan-content .attr:nth-child(2n) {
+            background: #f3f3f3;
+        }
+        .buy .tab-content .version-list {
+            float: left;
+        }
+        .buy .tab-content .version-item {
+            float: left;
+            width: 400px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            transition: transform .3s;
+        }
+        .buy .tab-content .version-item:hover {
+            border: 1px solid #3497DB!important;
+            transform: scaleY(1.05);
+        }
+        .buy .tab-content .version-item:hover button {
+            background: #3497DB;
+        }
+        .buy .tab-content .version-item:nth-child(2) {
+            border-left: 0;
+        }
+        .buy .tab-content .version-item .head {
+            height: 186px;   
+            background: rgb(25, 142, 222);
+        }
+        .buy .tab-content .version-item .head .name {
+            line-height: 60px;
+            text-align: center;
+            font-size: 20px;
+            color: #fff;
+        }
+        .buy .tab-content .version-item .head .place {
+            text-align: center;
+            font-size: 16px;
+            color: #fff;
+        }
+        .buy .tab-content .version-item .head select {
+            margin: 30px auto 0;
+            padding-left: 10px;
+            display: block;
+            width: 140px;
+            height: 40px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+            color: #3497DB;
+        }
+        .buy .tab-content .version-item .version-content {
+            height: 420px;
+        }
+        .buy .tab-content .version-item .attr {
+            text-align: center;
+            height: 40px;
+            line-height: 40px;
+        }
+        .buy .tab-content .version-item .attr:nth-child(2n) {
+            background: #f3f3f3;
+        }
+        .buy .tab-content .version-item .attr .icon-tick {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 13px;
+            width: 14px;
+            height: 14px;
+            background: #f00;
+        }
+        .buy .tab-content .version-content button {
+            display: block;
+            margin: 0 auto;
+            width: 140px;
+            height: 40px;
+            outline: none;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-sizing: border-box;
+            background: #b2b2b2;
+            font-size: 16px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content clearfix">
+            <div class="logo-wrap">
+                <img src="../image/logo.png" alt="">
+            </div>
+            <nav class="topbar-nav clearfix">
+                <div class="nav-item active">
+                    <a href="">首页</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">客户案例</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">使用手册</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">定制开发</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">关于我们</a>
+                </div>
+            </nav>
+            <div class="topbar-right clearfix">
+                <div class="regist"><a href="">免费注册</a></div>
+                <div class="login"><a href="">登录</a></div>
+                <div class="personal-center">
+                    <a href="">
+                        <i class="iconfont icon-setting"></i>
+                        <span class="text">个人中心</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <div class="buy">
+            <ul class="tab-btn-list clearfix">
+                <li class="tab-btn active">PC+WEB+小程序+APP</li>
+                <li class="tab-btn">
+                    <span class="icon-app"></span>
+                    <span class="text">APP</span>
+                </li>
+                <li class="tab-btn">
+                    <span class="icon-pv"></span>
+                    <span class="text">PC</span>
+                </li>
+                <li class="tab-btn">
+                    <span class="icon-miniapp"></span>
+                    <span class="text">小程序</span>
+                </li>
+                <li class="tab-btn">多选</li>
+            </ul>
+            <ul class="tab-content-list">
+                <div class="tab-content active">
+                    <div class="head">
+                        <div class="title">支持多选</div>
+                        <div class="multiple">
+                            <div class="type-item active">
+                                <span class="icon-pc"></span>
+                                <span class="name">PC</span>
+                            </div>
+                            <div class="type-item">
+                                <span class="icon-app"></span>
+                                <span class="name">APP</span>
+                            </div>
+                            <div class="type-item active">
+                                <span class="icon-miniapp"></span>
+                                <span class="name">小程序</span>
+                            </div>
+                            <button class="btn">确定</button>
+                        </div>
+                    </div>
+                    <div class="version clearfix">
+                        <div class="plan">
+                            <div class="head">
+                                <div class="title">Sitestat Pro 建站功能配置计划</div>
+                            </div>
+                            <div class="plan-content clearfix">
+                                <div class="left">计划</div>
+                                <div class="right">
+                                    <ul class="attr-list">
+                                        <li class="attr-item">
+                                            <div class="attr">优惠活动</div>
+                                            <div class="attr">原价</div>
+                                            <div class="attr">空间大小</div>
+                                            <div class="attr">月流量</div>
+                                            <div class="attr">上传文件个数</div>
+                                            <div class="attr">去除底部版权</div>
+                                            <div class="attr">域名绑定</div>
+                                            <div class="attr">页面个数</div>
+                                            <div class="attr">技术支持</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="version-list clearfix">
+                            <li class="version-item">
+                                <div class="head">
+                                    <div class="name">标准版</div>
+                                    <div class="place">上海</div>
+                                    <select name="" id="">
+                                        <option value="">4400.00/5年</option>
+                                    </select>
+                                </div>
+                                <div class="version-content">
+                                    <ul class="attr-list">
+                                        <li class="attr">买两年送一年</li>
+                                        <li class="attr">¥1880/年</li>
+                                        <li class="attr">5G</li>
+                                        <li class="attr">20G</li>
+                                        <li class="attr">5000</li>
+                                        <li class="attr"><span class="icon-tick"></span></li>
+                                        <li class="attr">8</li>
+                                        <li class="attr">不限</li>
+                                        <li class="attr"><span class="icon-tick"></span></li>
+                                    </ul>
+                                   <div class="btn-wrap">
+                                        <button>马上开通</button>
+                                   </div>
+                                </div>
+                            </li>
+                            <li class="version-item">
+                                <div class="head">
+                                    <div class="name">营销版</div>
+                                    <div class="place">上海</div>
+                                    <select name="" id="">
+                                        <option value="">4400.00/5年</option>
+                                    </select>
+                                </div>
+                                <div class="version-content">
+                                    <ul class="attr-list">
+                                        <li class="attr">买两年送一年</li>
+                                        <li class="attr">¥1880/年</li>
+                                        <li class="attr">5G</li>
+                                        <li class="attr">20G</li>
+                                        <li class="attr">5000</li>
+                                        <li class="attr"><span class="icon-tick"></span></li>
+                                        <li class="attr">8</li>
+                                        <li class="attr">不限</li>
+                                        <li class="attr"><span class="icon-tick"></span></li>
+                                    </ul>
+                                    <div class="btn-wrap">
+                                        <button>马上开通</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="content clearfix">
+            <div class="nav clearfix">
+                <dl>
+                    <dt>公司产品</dt>
+                    <dd><a href="">APP开发</a></dd>
+                    <dd><a href="">网站开发</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                    <dd><a href="">微信小程序</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于我们</dt>
+                    <dd><a href="">公司简介</a></dd>
+                    <dd><a href="">新闻资讯</a></dd>
+                    <dd><a href="">人才招聘</a></dd>
+                </dl>
+                <dl>
+                    <dt>客户服务</dt>
+                    <dd><a href="">支付方式</a></dd>
+                    <dd><a href="">在线沟通</a></dd>
+                </dl>
+            </div>
+            <div class="contact">
+                <div class="phone">800-000-0000</div>
+                <div class="time">周一至周五 09:00 - 18:00</div>
+                <ul class="contact-way-list clearfix">
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                    <li class="contact-way-item">
+                        <a href="">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="copyright-content clearfix">
+                <div class="logo">
+                    <img src="" alt="">
+                </div>
+                <p class="copyright">2009-2016 © 广州聚慧网络科技有限公司 版权所有 粤ICP备******号-*  网站地图</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/jquery.3.3.1.js"></script>
+    <script>
+        $('.tab-btn').on('click', function(e) {
+            if ($(this).hasClass('active')) {
+                return
+            }
+            var index = $(this).index()
+            $('.tab-btn.active').removeClass('active')
+            $('.tab-content.active').removeClass('active')
+            $(this).addClass('active')
+            $('.tab-content').eq(index).addClass('active')
+        })
+    </script>
+</body>
+</html>

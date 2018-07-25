@@ -29,7 +29,7 @@
 
 .icon-fanhuidingbu3:before { content: "\e64a"; }
 
-.icon-shouji:before { content: "\e66f"; }
+.icon-mobile:before { content: "\e66f"; }
 
 .icon-lianxirenweixuanzhong:before { content: "\e601"; }
 
@@ -41,11 +41,11 @@
 
 .icon-setting:before { content: "\e637"; }
 
-.icon-diannao:before { content: "\e640"; }
+.icon-pc:before { content: "\e640"; }
 
 .icon-order:before { content: "\e60a"; }
 
 .icon-star:before { content: "\e612"; }
 
-.icon-xiaochengxu:before { content: "\e619"; }
+.icon-miniapp:before { content: "\e619"; }
 

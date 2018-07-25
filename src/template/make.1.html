@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>APP制作-1</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/iconfont.css">
+    <link rel="stylesheet" href="../css/common.css">
+    <style>
+        .main {
+            position: absolute;
+            top: 78px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 0 5%;
+            min-height: 800px;
+            background: url(../image/bg_1.png) repeat center;
+            min-width: 1200px;
+        }
+        .main .aside {
+            position: relative;
+            width: 10%;
+            height: 100%;
+            min-height: 700px;
+            float: left;
+        }
+        .main .aside .tab-btn-list {
+            position: absolute;
+            top: 50%;
+            margin-top: -270px;
+        }
+        .main .aside .tab-btn {
+            margin-bottom: 60px;
+            width: 90px;
+            height: 90px;
+            line-height: 90px;
+            border-radius: 45px;
+            box-shadow:0px 0px 10px rgba(0,0,0,1);
+            background: #fff;
+            cursor: pointer;
+            transition: all .3s;
+        }
+        .main .aside .tab-btn:hover,
+        .main .aside .tab-btn.active {
+            width: 180px;
+            background: #08AEFC;
+            color: #fff;
+            box-shadow: none;
+        }
+        .main .aside .tab-btn:hover .name,
+        .main .aside .tab-btn.active .name {
+            display: initial;
+            opacity: 1;
+        }
+        .main .aside .tab-btn .iconfont {
+            display: inline-block;
+            vertical-align: top;
+            padding-left: 25px;
+            font-size: 40px;
+        }
+        .main .aside .tab-btn .icon-app {
+            padding-left: 20px;
+            font-size: 24px;
+            color: #707070;
+            font-weight: bold;
+        }
+        .main .aside .tab-btn:hover .icon-app,
+        .main .aside .tab-btn.active .icon-app {
+            color: #fff;
+        }
+        .main .aside .tab-btn .name {
+            position: absolute;
+            left: 80px;
+            font-size: 25px;
+            color: #fff;
+            opacity: 0;
+            transition: all .3s;
+        }
+        .main .section {
+            float: left;
+            position: relative;
+            margin-top: 5%;
+            margin-left: 10%;
+            width: 70%;
+            height: 80%;
+            min-height: 700px;
+        }
+        .main .section .box {
+            width: 800px;
+            height: 700px;
+        }
+        .main .section .box img {
+            width: 100%;
+            height: 100%;
+        }
+        .main .section .box iframe {
+            position: absolute;
+            top: 32px;
+            left: 35px;
+            width: 732px;
+            height: 468px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content clearfix">
+            <div class="logo-wrap">
+                <img src="../image/logo.png" alt="">
+            </div>
+            <nav class="topbar-nav clearfix">
+                <div class="nav-item">
+                    <a href="">首页</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">客户案例</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">使用手册</a>
+                </div>
+                <div class="nav-item">
+                    <a href="">定制开发</a>
+                </div>
+                <div class="nav-item active">
+                    <a href="">关于我们</a>
+                </div>
+            </nav>
+            <div class="topbar-right clearfix">
+                <div class="regist"><a href="">免费注册</a></div>
+                <div class="login"><a href="">登录</a></div>
+                <div class="personal-center">
+                    <a href="">
+                        <i class="iconfont icon-setting"></i>
+                        <span class="text">个人中心</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="main">
+        <aside class="aside">
+            <ul class="tab-btn-list">
+                <li class="tab-btn active">
+                    <span class="iconfont icon-pc"></span>
+                    <span class="name">电脑</span>
+                </li>
+                <li class="tab-btn">
+                    <span class="iconfont icon-mobile"></span>
+                    <span class="name">手机</span>
+                </li>
+                <li class="tab-btn">
+                    <span class="icon-app">APP</span>
+                    <span class="name">预览</span>
+                </li>
+                <li class="tab-btn">
+                    <span class="iconfont icon-miniapp"></span>
+                    <span class="name">小程序</span>
+                </li>
+            </ul>
+        </aside>
+        <section class="section">
+            <div class="box">
+                <img src="../image/pc.jpg" alt="">
+                <iframe src="http://www.baidu.com" frameborder="0"></iframe>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
